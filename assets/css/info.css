@@ -1,0 +1,13 @@
+.section{
+  display: flex;
+}
+.info{
+    padding: 5% 21%;
+}
+
+
+@media (max-width: 435px){
+    .info{ 
+        padding: 0;
+    }
+}

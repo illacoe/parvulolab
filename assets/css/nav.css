@@ -1,0 +1,28 @@
+.header{
+    display: flex;  
+}
+.header__nav{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.header__navlink{
+    list-style: none;
+    padding-left: 60px ;
+}
+.navlink{
+    text-decoration: none;
+    color: #000000 ;
+}
+.header__burger{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .header__nav-desktop{
+        display: none;
+    }
+    .header__burger{
+        display: block;
+    }
+}
