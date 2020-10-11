@@ -80,4 +80,11 @@
     .collection{ 
         grid-template-columns: 1fr;
     }
+    .collection__title{ 
+        font-size: 14.2vw;
+    }
+    .collection__title::after{
+        width: 36vw;
+        height: 36vw;
+    }
 }
