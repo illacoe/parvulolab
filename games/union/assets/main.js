@@ -92,7 +92,25 @@ const brands = [
   let droppableElements;
   
   initiateGame();
-  
+
+  function touchHandler(event) {
+    var touch = event.changedTouches[0];
+
+    var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent({
+        touchstart: "mousedown",
+        touchmove: "mousemove",
+        touchend: "mouseup"
+    }[event.type], true, true, window, 1,
+        touch.screenX, touch.screenY,
+        touch.clientX, touch.clientY, false,
+        false, false, false, 0, null);
+
+    touch.target.dispatchEvent(simulatedEvent);
+    event.preventDefault();
+}
+
+   
   function initiateGame() {
     const randomDraggableBrands = generateRandomItemsArray(totalDraggableItems, brands);
     const randomDroppableBrands = totalMatchingPairs<totalDraggableItems ? generateRandomItemsArray(totalMatchingPairs, randomDraggableBrands) : randomDraggableBrands;
@@ -121,7 +139,8 @@ const brands = [
     draggableElements.forEach(elem => {
       elem.addEventListener("dragstart", dragStart);
       // elem.addEventListener("drag", drag);
-      // elem.addEventListener("dragend", dragEnd);
+      // elem.addEventListener("dragend", dragEnd);          
+      
     });
     
     droppableElements.forEach(elem => {
@@ -130,6 +149,12 @@ const brands = [
       elem.addEventListener("dragleave", dragLeave);
       elem.addEventListener("drop", drop);
     });
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+   
+   
   }
   
   // Drag and Drop Functions
@@ -138,6 +163,7 @@ const brands = [
   
   function dragStart(event) {
     event.dataTransfer.setData("text", event.target.id); // or "text/plain"
+    
   }
   
   //Events fired on the drop target

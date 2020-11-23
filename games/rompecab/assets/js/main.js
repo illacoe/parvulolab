@@ -1,7 +1,24 @@
 
 var correctCards = 0;
 $( init );
+// function touchHandler(event) {
+//   var touch = event.changedTouches[0];
 
+//   var simulatedEvent = document.createEvent("MouseEvent");
+//       simulatedEvent.initMouseEvent({
+//       touchstart: "mousedown",
+//       touchmove: "mousemove",
+//       touchend: "mouseup"
+//   }[event.type], true, true, window, 1,
+//       touch.screenX, touch.screenY,
+//       touch.clientX, touch.clientY, false,
+//       false, false, false, 0, null);
+
+//   touch.target.dispatchEvent(simulatedEvent);
+//   event.preventDefault();
+// }
+
+ 
 function init() {
 
   // Hide the success message
@@ -28,7 +45,7 @@ function init() {
   }
 
   // Create the card slots
-  var words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'therteen', 'fourteen', 'fiveteen' ];
+  var words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen' ];
   for ( var i=0; i<=15; i++ ) {
     $('<div>' + words[i] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
@@ -37,7 +54,12 @@ function init() {
     } );
   }
 
+  // document.addEventListener("touchstart", touchHandler, true);
+  // document.addEventListener("touchmove", touchHandler, true);
+  // document.addEventListener("touchend", touchHandler, true);
+  // document.addEventListener("touchcancel", touchHandler, true);
 }
+
 
 function handleCardDrop( event, ui ) {
   var slotNumber = $(this).data( 'number' );
