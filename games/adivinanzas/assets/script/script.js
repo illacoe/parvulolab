@@ -155,7 +155,7 @@ const questions = [
   },
   {
     question: 'https://i.imgur.com/RCs7Nyv.jpg',
-    question2:'Orejas largas, cuepo cortito, corro y salto muy larguito',
+    question2:'Orejas largas, cuerpo cortito, corro y salto muy larguito',
     answers: [
       { text: './assets/img/img-juego/oso.png', correct: false, score: 0 },
       { text: './assets/img/img-juego/conejo.png', correct: true, score: 1 }
@@ -195,7 +195,7 @@ const questions = [
   },
   {
     question: 'https://www.mariowiki.com/images/5/5d/Dkthink.png',
-    question2:'Salgo todas las mañanas, por la tarde, me escondo. Doy seimpre luz y calor, y soy.. redondo, redondo ¿Quien soy?',
+    question2:'Salgo todas las mañanas, por la tarde, me escondo. Doy siempre luz y calor, y soy.. redondo, redondo ¿Quien soy?',
     answers: [
       { text: './assets/img/img-juego/pelota.png', correct: false, score: 0 },
       { text: './assets/img/img-juego/sol.png', correct: true, score: 1 }
