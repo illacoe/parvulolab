@@ -1,6 +1,7 @@
 
 var correctCards = 0;
 $( init );
+
 function touchHandler(event) {
   var touch = event.changedTouches[0];
 

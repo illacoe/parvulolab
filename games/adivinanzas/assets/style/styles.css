@@ -60,10 +60,12 @@ body.wrong {
 }
 
 .btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  margin: 20px 0;
+  display: flex;
+  /* grid-template-columns: repeat(2, auto); */
+  /* gap: 10px; */
+  margin: auto;
+  justify-content: space-between;
+  width: 30%;
 }
 
 .btn {
@@ -91,7 +93,7 @@ body.wrong {
 
 .start-btn,
 .next-btn {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   padding: 10px 20px;
 }
@@ -100,12 +102,13 @@ body.wrong {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
 }
 .hide {
   display: none;
 }
 .img__question {
-  height: 350px;
+  height: 200px;
 }
 #question {
   display: flex;
@@ -114,6 +117,7 @@ body.wrong {
 #question-text {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 audio{
   display: none;
@@ -143,12 +147,17 @@ audio{
 }
 @media (max-width: 768px) {
   .img__question{
-    height: 150px;
+    height: 100px;
   }
   *,
 *::before,
 *::after { 
-  font-size: 33px;
+  font-size: 25px;
+}
+
+.btn-grid{
+  justify-content: space-around;
+  width: 100%;
 }
  
 }
